@@ -1,0 +1,10 @@
+.transfer-container{
+    margin-top: 90px;
+    display: flex;
+}
+.transfer-main-container{
+    margin-left: 260px;
+}
+.transfer{
+    width:100vw;
+}

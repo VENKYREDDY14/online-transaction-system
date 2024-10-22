@@ -1,0 +1,55 @@
+.login-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f4f8;
+  }
+  .styling-login-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  .styling-password-input{
+    cursor: pointer;
+    outline: none;
+    border-style: none;
+    margin-top: 5px;
+    padding: 3px;
+}
+.styling-input{
+  cursor: pointer;
+  outline: none;
+  border-style: none;
+  margin-top: 5px;
+  padding: 3px;
+  border-style:solid;
+  border-color: gray;
+  width:225px;
+}
+
+.styling-label{
+    font-family: "Roboto";
+    font-weight: bold;
+    color:#4682b4;
+}
+.password-container{
+  border-style: solid;
+  border-color: gray;
+  border-width: 1px;
+  width:225px;
+  display: flex;
+}
+
+.input-container-heading{
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+.button{
+  width:220px;
+}
+.styling-heading-account{
+  font-family: "Roboto";
+  color:blue;
+  text-align: center;
+  font-size:30px;
+}

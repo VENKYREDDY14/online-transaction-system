@@ -1,0 +1,102 @@
+
+
+.footer-mobile {
+    width: 100vw;
+    height: auto;
+    position: fixed;
+    bottom: 0; 
+    left: 0;
+    background-color: #dbe4ed;
+    z-index: 100; 
+}
+.sidebr-listitem-button{
+    border-style: none;
+    background: none;
+    font-weight: bold;
+}
+.active-tab-color{
+    background-color:#3e5c8a;
+    border-radius: 5px;
+    width:7vw;
+}
+.footer-ul-mobile {
+    display: flex;
+    justify-content: space-around; 
+    padding: 10px 0; 
+    margin: 0;
+    list-style: none;
+    
+}
+.active-listitem-button-color{
+    color:#ffffff;
+}
+
+@media screen and (min-width:576px){
+    .sidebar-container{
+        width: 15vw;
+        background-color: #dbe4ed;
+        height:85vh;
+        position: fixed;
+        left:0;
+    }
+    .active-tab-color{
+        background-color:#3e5c8a;
+        border-radius: 5px;
+        width:5vw;
+    }
+    .styling-sidebar-icon{
+        font-size:1.3rem;
+    }
+    .styling-sidebar-display-text{
+        font-size:1.3vw;
+        margin: 10px;
+      
+    }
+    .sidebar-list-item{
+        width:5vw;
+    }
+    .sidebar-ul-list{
+        height:88vh;
+    }
+  
+    
+   
+}
+@media screen and (min-width:769px){
+  .sidebar-container{
+        width:17vw;
+        background-color: #dbe4ed;
+        height:85vh;
+        position: fixed;
+        left:0;
+    }
+    .active-tab-color{
+        background-color:#3e5c8a;
+        border-radius: 5px;
+        width:10vw;
+    }
+    .sidebar-list-item{
+        width:12vw;
+    }
+    
+}
+@media screen and (min-width:993px){
+.sidebar-container{
+    width: 14vw;
+}
+.active-tab-color{
+    width: 10vw;
+}
+    
+}
+@media screen and (min-width:1201px){
+    .sidebar-container{
+        width: 13vw;
+    }
+    .active-tab-color{
+        width: 10vw;
+    }
+}
+.link-item{
+    text-decoration: none;
+}
