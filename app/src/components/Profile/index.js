@@ -10,11 +10,11 @@ const Profile=()=>{
     },[changeActiveTabId])
     
     return(
-        <div className='home'>
+        <div className='profile'>
         <Header/>
-        <div className="home-container">
+        <div className="profile-container">
         <Sidebar/>
-        <div className="home-main-container">
+        <div className="profile-main-container">
             <h1>Profile</h1>
         </div>
         </div>

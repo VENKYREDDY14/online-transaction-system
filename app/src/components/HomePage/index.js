@@ -1,17 +1,18 @@
 import Header from '../Header'
 import Sidebar from '../Sidebar'
 import './index.css'
-const Profile=()=>{
+const Home=()=>{
     return(
-        <div className='profile'>
+        <div className='home'>
         <Header/>
-        <div className="profile-container">
+        <div className="home-container">
         <Sidebar/>
-        <div className="profile-main-container">
+        <div className="home-main-container">
             <h1>Home</h1>
+            
         </div>
         </div>
         </div>
     )
 }
-export default Profile
+export default Home
