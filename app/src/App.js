@@ -11,6 +11,7 @@ import Profile from './components/Profile'
 import History from './components/History'
 import Transfer from './components/Transfer'
 import Balance from './components/Balance'
+import ChangeNumber from './components/ChangeNumber'
 import {useState} from 'react'
 const App=()=>{
   const [activeTabId,setActiveTabId]=useState('HOME');
@@ -27,6 +28,7 @@ const App=()=>{
    <Route exact path='/create-account' element={<CreateAccount/>}/>
    <Route exact path="/otp" element={<Otp/>}/>
    <Route exact path="/new-password" element={<NewPassword/>}/>
+   <Route exact path="/change-number" element={<ChangeNumber/>}/>
    <Route exact path="/" element={<LandingPage/>}/>
    <Route exact path='/home' element={<Home/>}/>
    <Route exact path="/profile" element={<Profile/>}/>

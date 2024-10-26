@@ -10,6 +10,7 @@
     height:50px;
     width:50px;
     border-radius: 10px;
+    cursor: pointer;
 }
 .logout-button-container{
     height: 12vh;

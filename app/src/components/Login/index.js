@@ -29,11 +29,11 @@ const Login = () => {
         <div className="col-md-6 credentials-container">
          <form className='form-container'>
             <div className='input-container'>
-            <label htmlFor="number" className='styling-label'>ENTER THE NUMBER:</label><br/>
+            <label htmlFor="number" className='styling-label-login'>ENTER THE GMAIL:</label><br/>
             <input type="text" id="number" className='styling-input' onChange={(event)=>{setNumber(event.target.value)}} value={number}/>
             </div>
             <div className='input-container'>
-            <label htmlFor="password" className='styling-label'>ENTER THE PASSWORD:</label><br/>
+            <label htmlFor="password" className='styling-label-login'>ENTER THE PASSWORD:</label><br/>
             <input type={showPassword?password:'password'} id="password" className='styling-input' onChange={(event)=>{setPassword(event.target.value)}} value={password}/>
             </div>
             <div className='input-container'>

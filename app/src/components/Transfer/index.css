@@ -1,10 +1,47 @@
 .transfer-container{
-    margin-top: 90px;
+    margin-top: 4.3rem;
     display: flex;
 }
 .transfer-main-container{
-    margin-left: 260px;
+    margin-left: 2%;
 }
+
 .transfer{
     width:100vw;
+}
+@media screen and (min-width:576px){
+    .transfer-container{
+        margin-top: 4.5rem;
+        display: flex;
+    }
+    .transfer-main-container{
+        margin-left: 16%;
+    }
+}
+@media screen and (min-width:768px){
+    .transfer-container{
+        margin-top: 75px;
+        display: flex;
+    }
+    .transfer-main-container{
+        margin-left: 18%;
+    }
+}
+@media screen and (min-width:992px){
+    .transfer-container{
+        margin-top: 75px;
+        display: flex;
+    }
+    .transfer-main-container{
+        margin-left: 15%;
+    }
+}
+@media screen and (min-width:1200px){
+    .transfer-container{
+        margin-top: 90px;
+        display: flex;
+    }
+    .transfer-main-container{
+        margin-left: 14%;
+    }
 }

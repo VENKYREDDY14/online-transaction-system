@@ -1,0 +1,21 @@
+
+.set-phone-heading{
+    font-family: "Roboto";
+    color:blue;
+
+    font-size:30px;
+  }
+.styling-label-phone{
+    font-family: "Roboto";
+    font-weight: bold;
+    color:#4682b4;
+   
+}
+.change-number-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.styling-button-phone{
+    width: 220px;
+}

@@ -1,14 +1,15 @@
-.login-container {
+.creating-new-account {
+    width:100vw;
+    height:100vh;
     display: flex;
-    align-items: center;
     justify-content: center;
-    background-color: #f0f4f8;
+   
   }
-  .styling-login-image {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-  }
+ .main-heading{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ }
   .styling-password-input{
     cursor: pointer;
     outline: none;
@@ -16,6 +17,7 @@
     margin-top: 5px;
     padding: 3px;
 }
+
 .styling-input{
   cursor: pointer;
   outline: none;
@@ -31,6 +33,7 @@
     font-family: "Roboto";
     font-weight: bold;
     color:#4682b4;
+    font-size: 20px;
 }
 .password-container{
   border-style: solid;
@@ -39,10 +42,11 @@
   width:225px;
   display: flex;
 }
-
-.input-container-heading{
-  margin-top: 10px;
-  margin-bottom: 20px;
+.new-account-details-container{
+  background-color: #EDE7F6;
+  margin-top: 20%;
+  padding: 20px;
+  border-radius: 20px;
 }
 .button{
   width:220px;
@@ -50,6 +54,17 @@
 .styling-heading-account{
   font-family: "Roboto";
   color:blue;
-  text-align: center;
+ 
   font-size:30px;
 }
+.new-account-img-container{
+width:25%;
+height:48%;
+margin-top: 0px;
+margin-right: 20px;
+}
+.styling-login-image {
+  width:100%;
+  height:100%;
+   border-radius: 10px;
+ }
