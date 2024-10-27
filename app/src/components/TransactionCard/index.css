@@ -1,0 +1,79 @@
+.transaction-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 12px 0;
+    display: flex;
+    flex-direction: column;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.2s;
+    width: 80vw;
+  }
+  
+  .transaction-card:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .transaction-card-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+  
+  .transaction-type.credit {
+    color: #4caf50;
+  }
+  
+  .transaction-type.debit {
+    color: #f44336;
+  }
+  
+  .transaction-status.completed {
+    color: #4caf50;
+  }
+  
+  .transaction-status.pending {
+    color: #ff9800;
+  }
+  
+  .transaction-card-main {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .transaction-amount {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .transaction-id,
+  .transaction-date {
+    font-size: 12px;
+    color: #666;
+    margin-top: 4px;
+  }
+  
+  .transaction-card-footer {
+    margin-top: 12px;
+    font-size: 12px;
+    color: #999;
+  }
+  @media screen and (min-width:576px) {
+    .transaction-card{
+      width: 70vw;
+    }
+  }
+  @media screen and (min-width:768px) {
+    .transaction-card{
+      width: 65vw;
+    }
+  }
+  @media screen and (min-width:992px){
+    .transaction-card{
+      width: 50vw;
+    }
+  }

@@ -1,13 +1,63 @@
 .transfer-container{
     margin-top: 4.3rem;
     display: flex;
+    width: 100%;
 }
 .transfer-main-container{
     margin-left: 2%;
+    width: 90%;
 }
 
 .transfer{
     width:100vw;
+    height: 90vh;
+}
+.send-button-transfer{
+    width:15rem;
+    margin-right: 20px;
+}
+.styling-label-transfer{
+    font-family: "Roboto";
+    font-size: 1.3rem;
+    color: #4f46e5;
+    margin-bottom:2px;
+    
+}
+.main-heading-transfer{
+    font-family: "Roboto";
+    color:  blue;
+}
+.money-container-tranfer{
+    border-style: solid;
+    padding: 20px;
+    border-radius: 10px;
+    border-color: #dfe2e8;
+    border-width: 2px;
+    
+    width: 70%;
+}
+.money-container-form{
+    width:25vw;
+}
+.styling-input-transfer{
+   cursor: pointer;
+    outline: none;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #dfe2e8;
+    padding: 5px;
+    width: 15rem;
+}
+.scrolling-text-transfer{
+    color:#8a2be2;
+}
+.alert-text{
+    color: red;
+}
+.styling-note-text{
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px;
 }
 @media screen and (min-width:576px){
     .transfer-container{
@@ -16,6 +66,9 @@
     }
     .transfer-main-container{
         margin-left: 16%;
+    }
+    .money-container-tranfer{
+        width: 60%;
     }
 }
 @media screen and (min-width:768px){
@@ -26,6 +79,9 @@
     .transfer-main-container{
         margin-left: 18%;
     }
+    .money-container-tranfer{
+        width: 50%;
+    }
 }
 @media screen and (min-width:992px){
     .transfer-container{
@@ -34,6 +90,9 @@
     }
     .transfer-main-container{
         margin-left: 15%;
+    }
+    .money-container-tranfer{
+        width: 25%;
     }
 }
 @media screen and (min-width:1200px){

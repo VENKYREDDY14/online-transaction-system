@@ -7,7 +7,7 @@ import Reset from '../Reset';
 import {Link, useNavigate} from 'react-router-dom'
 
 const Login = () => {
-    const [number,setNumber]=useState('');
+    const [gmail,setGmail]=useState('');
     const [password,setPassword]=useState('');
     const [showPassword,setShowPassword]=useState(false);
     const navigate=useNavigate();
@@ -29,8 +29,8 @@ const Login = () => {
         <div className="col-md-6 credentials-container">
          <form className='form-container'>
             <div className='input-container'>
-            <label htmlFor="number" className='styling-label-login'>ENTER THE GMAIL:</label><br/>
-            <input type="text" id="number" className='styling-input' onChange={(event)=>{setNumber(event.target.value)}} value={number}/>
+            <label htmlFor="gmail" className='styling-label-login'>ENTER THE GMAIL:</label><br/>
+            <input type="gmail" id="gmail" className='styling-input' onChange={(event)=>{setGmail(event.target.value)}} value={gmail}/>
             </div>
             <div className='input-container'>
             <label htmlFor="password" className='styling-label-login'>ENTER THE PASSWORD:</label><br/>

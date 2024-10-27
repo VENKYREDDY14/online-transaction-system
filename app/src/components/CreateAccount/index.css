@@ -1,9 +1,19 @@
 .creating-new-account {
     width:100vw;
-    height:100vh;
+    height: 60vh;
     display: flex;
     justify-content: center;
-   
+    
+  }
+  @media screen and (min-width:992px){
+    .creating-new-account{
+      height: 60vh;
+    }
+  }
+  @media screen and (min-width:1200px){
+    .creating-new-account{
+      height: 50vh;
+    }
   }
  .main-heading{
   display: flex;
@@ -44,7 +54,7 @@
 }
 .new-account-details-container{
   background-color: #EDE7F6;
-  margin-top: 20%;
+  height: 100%;
   padding: 20px;
   border-radius: 20px;
 }
@@ -58,8 +68,8 @@
   font-size:30px;
 }
 .new-account-img-container{
-width:25%;
-height:48%;
+width: 30%;
+
 margin-top: 0px;
 margin-right: 20px;
 }

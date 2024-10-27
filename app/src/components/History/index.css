@@ -9,6 +9,9 @@
 .history{
     width:100vw;
 }
+.transactions-container-history{
+    list-style-type: none;
+}
 @media screen and (min-width:576px){
     .history-container{
         margin-top: 4.5rem;
