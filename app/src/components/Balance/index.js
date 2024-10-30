@@ -8,6 +8,7 @@ const Balance=()=>{
     useEffect(()=>{
         changeActiveTabId('BALANCE');
     },[changeActiveTabId])
+
     return(
         <div className='balance'>
         <Header/>

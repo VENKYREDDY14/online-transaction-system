@@ -2,12 +2,18 @@ import { Input } from 'antd'
 import './index.css'
 import 'bootstrap/dist/css/bootstrap.min.css'; 
 import {Link} from 'react-router-dom'
+import { useState } from 'react';
 const Otp=()=>{
+    const [otp,setOtp]=useState(0);
     const onChange=(text)=>{
-        console.log(text);
+        setOtp(text);
+       
     }
     const sharedProps={
         onChange,
+    }
+    const onSubmitOtp=async ()=>{
+       
     }
     return(
         <div className='d-flex flex-column justify-content-center align-items-center'>
@@ -17,7 +23,7 @@ const Otp=()=>{
         </div>
         <div>
             <Link to="/new-password">
-            <button className="btn btn-primary submit-button">Submit</button>
+            <button className="btn btn-primary submit-button" onClick={onSubmitOtp}>Submit</button>
             </Link>
         </div>
         </div>
