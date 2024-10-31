@@ -2,8 +2,8 @@ import createAccountImage from './create-account.webp';
 import { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useNavigate } from 'react-router-dom';
-import { BiHide, BiShow } from "react-icons/bi";
 import './index.css';
+
 
 const CreateAccount = () => {
     const [number, setNumber] = useState('');
@@ -15,7 +15,7 @@ const CreateAccount = () => {
     const [isOtpStatusValid, setOtpValidStatus] = useState(false);
     const [otpTimeout, setOtpTimeout] = useState(null);
     const [password, setPassword] = useState('');
-    const [showPassword, setShowPassword] = useState(false);
+    
 
     const navigate = useNavigate();
 
@@ -36,7 +36,7 @@ const CreateAccount = () => {
             setOtpValidStatus(false);
             clearTimeout(otpTimeout);
             navigate('/login', { replace: true });
-            alert('account created successfully');
+            alert('Account created successfully');
         } else {
             setOtpValidStatus(true);
         }
@@ -54,6 +54,7 @@ const CreateAccount = () => {
 
         if (response.ok) {
             setOtpStatus(true);
+            alert('Generating OTP');
             setErrorStatus(false);
 
             const timeout = setTimeout(removeDetails, 5 * 60 * 1000);
@@ -68,7 +69,7 @@ const CreateAccount = () => {
     }, [otpTimeout]);
 
     return (
-        <div>
+        <div className='new-account'>
             <div className='main-heading'>
                 <h1 className="styling-heading-account">Create New Account</h1>
             </div>
@@ -76,7 +77,7 @@ const CreateAccount = () => {
                 <form onSubmit={isOtp ? onVerifyingOtp : onSendingDetails} className='form-width-create'>
                     <div className='new-account-details-container'>
                         <div className='input-container'>
-                            <label htmlFor="gmail" className='styling-label'>ENTER THE GMAIL:</label><br />
+                            <label htmlFor="gmail" className='styling-label'>Email Address:</label><br />
                             <input
                                 type="email"
                                 id="gmail"
@@ -84,10 +85,11 @@ const CreateAccount = () => {
                                 onChange={(event) => setGmail(event.target.value)}
                                 value={gmail}
                                 required 
+                                placeholder={'Enter your email'}
                             />
                         </div>
                         <div className='input-container'>
-                            <label htmlFor="number" className='styling-label'>ENTER THE NUMBER:</label><br />
+                            <label htmlFor="number" className='styling-label'>Phone Number:</label><br />
                             <input
                                 type="text"
                                 id="number"
@@ -95,10 +97,11 @@ const CreateAccount = () => {
                                 onChange={(event) => setNumber(event.target.value)}
                                 value={number}
                                 required 
+                                placeholder={'Enter your phone number'}
                             />
                         </div>
                         <div className='input-container'>
-                            <label htmlFor="username" className='styling-label'>ENTER USERNAME:</label><br />
+                            <label htmlFor="username" className='styling-label'>Username:</label><br />
                             <input
                                 type="text"
                                 id="username"
@@ -106,27 +109,26 @@ const CreateAccount = () => {
                                 onChange={(event) => setUsername(event.target.value)}
                                 value={username}
                                 required 
+                                placeholder={'Choose a username'}
                             />
                         </div>
                         <div className='input-container'>
-                            <label htmlFor="password" className='styling-label'>SET PASSWORD:</label><br />
+                            <label htmlFor="password" className='styling-label'>Password:</label><br />
                             <div className='d-flex'>
                                 <input
-                                    type={showPassword ? 'text' : 'password'}
+                                    type={'password'}
                                     id="password"
                                     className='styling-input'
                                     onChange={(event) => setPassword(event.target.value)}
                                     value={password}
                                     required 
+                                    placeholder={'Create a password'}
                                 />
-                                {showPassword
-                                    ? <BiShow className='styling-icon' onClick={() => setShowPassword(!showPassword)} />
-                                    : <BiHide className='styling-icon' onClick={() => setShowPassword(!showPassword)} />}
                             </div>
                         </div>
                         {isOtp && (
                             <div className='input-container'>
-                                <label htmlFor="otp" className='styling-label'>ENTER OTP:</label><br />
+                                <label htmlFor="otp" className='styling-label' >OTP:</label><br />
                                 <input
                                     type="text"
                                     id="otp"
@@ -134,6 +136,7 @@ const CreateAccount = () => {
                                     onChange={(event) => setOtp(event.target.value)}
                                     value={otp}
                                     required 
+                                    placeholder={'Enter the OTP sent to your email'}
                                 />
                             </div>
                         )}
@@ -142,7 +145,7 @@ const CreateAccount = () => {
                                 Register
                             </button>
                         </div>
-                        {errorStatus && <p className='error-message text-center'>Gmail already exists!</p>}
+                        {errorStatus && <p className='error-message text-center'>Email already exists!</p>}
                         {isOtpStatusValid && <p className='error-message text-center'>Invalid OTP!</p>}
                     </div>
                 </form>

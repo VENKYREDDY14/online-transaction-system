@@ -22,11 +22,6 @@ const listItems=[{
     displayText:"History",
     path:"/history"
 },
-{icon:<FaMoneyBillTransfer/>,
-    id:"TRANSFER",
- displayText:"Transfer" ,
- path:'/transfer'  
-},
 {icon:<MdAccountBalanceWallet/>,
     id:"BALANCE",
  displayText:"Balance",

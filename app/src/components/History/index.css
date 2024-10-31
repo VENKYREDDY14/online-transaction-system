@@ -1,11 +1,35 @@
 .history-container{
     margin-top: 4.3rem;
     display: flex;
+   
 }
 .history-main-container{
     margin-left: 2%;
+    background-color: #f0f4f8;
+    padding: 20px;
 }
-
+.hisory-container-transactions{
+    width: 100vw;
+    
+}
+.history-heading{
+    font-family: "Roboto";
+    text-align: center;
+    color:brown;
+    font-weight: bold;
+    font-size: 30px;
+    margin: 20px;
+    
+}
+.main-heading-transaction{
+    font-family: "Roboto";
+    color:blue;
+    font-size: 30px;
+}
+.main-heading-transaction-container{
+    width: 80vw;
+    height: 30vw;
+}
 .history{
     width:100vw;
 }

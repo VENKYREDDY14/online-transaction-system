@@ -1,8 +1,14 @@
 import HeaderImage from './HeaderLogo.webp'
 import 'bootstrap/dist/css/bootstrap.min.css'; 
-import {Link} from 'react-router-dom';
+import {Link,replace,useNavigate} from 'react-router-dom';
+import Cookies from 'js-cookie';
 import './index.css'
 const Header=()=>{
+    const navigate = useNavigate();
+    const onLogout=()=>{
+        Cookies.remove('jwtToken');
+        navigate('/home',{replace:true})
+    }
     return(
         <div>
             <div className="header-container">
@@ -13,11 +19,11 @@ const Header=()=>{
                 </Link>
                 </div>
                 <div className='d-flex flex-column justify-content-center logout-button-container'>
-               <Link to='/'>
-                <button className="btn btn-primary">
+               
+                <button className="btn btn-primary" onClick={onLogout}>
                     Logout
                 </button>
-                </Link>
+               
                 </div>
                 </div>
             </div>

@@ -4,11 +4,45 @@
 }
 .balance-main-container{
     margin-left: 2%;
+    width: 84vw;
+    background-color: #f0f4f8;
+    height: 85vh;
 }
-
+.balance-show-container{
+    background-color: aliceblue;
+    padding: 50px;
+    border-radius: 20px;
+    margin-top: 50px;
+    
+}
+.check-balance-heading{
+    color: #4169e1;
+    font-size: 30px;
+    
+   
+}
 .balance{
     width:100vw;
 }
+.account-balance{
+    font-weight: bold;
+    color:#4682b4;
+    font-size: 25px;
+    margin-top: 30px;
+}
+.user-balance{
+    color:#00bfff;
+}
+.styling-heading-balance{
+    font-family: "Roboto";
+    color:#007b8f;
+    font-weight: bold;
+   
+}
+.input-container-balance{
+    margin-top: 20px;
+}
+
 @media screen and (min-width:576px){
     .balance-container{
         margin-top: 4.5rem;
@@ -16,6 +50,9 @@
     }
     .balance-main-container{
         margin-left: 16%;
+    }
+      .styling-heading-balance{
+        width: 120px;
     }
 }
 @media screen and (min-width:768px){
@@ -26,6 +63,7 @@
     .balance-main-container{
         margin-left: 18%;
     }
+    
 }
 @media screen and (min-width:992px){
     .balance-container{
@@ -34,6 +72,9 @@
     }
     .balance-main-container{
         margin-left: 15%;
+    }
+    .styling-heading-balance{
+        width: 140px;
     }
 }
 @media screen and (min-width:1200px){

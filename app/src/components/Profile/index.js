@@ -1,16 +1,16 @@
 import Header from '../Header';
 import Sidebar from '../Sidebar';
 import Context from '../../Context/Context';
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect, useState,useCallback} from 'react';
 import { IoCloudUploadOutline } from "react-icons/io5";
 import {Link} from 'react-router-dom';
+import Cookies from 'js-cookie';
 import './index.css';
 
 const Profile = () => {
   const { changeActiveTabId } = useContext(Context);
-  
   const [photoUrl, setPhotoUrl] = useState('');
-
+  const [profileDetails,setProfileDetails]=useState('');
   const onChangeProfileLogo = (event) => {
     const file = event.target.files[0];
     if (file) {
@@ -22,10 +22,20 @@ const Profile = () => {
       reader.readAsDataURL(file);
     }
   };
-
+  const getProfile=useCallback(async()=>{
+    const id=Cookies.get('id');
+    const response=await fetch(`http://localhost:3001/profile/${id}`);
+    if(response.ok){
+      const details=await response.json();
+      console.log(details);
+      setProfileDetails(details);
+    }
+  },[])
   useEffect(() => {
     changeActiveTabId('PROFILE');
-  }, [changeActiveTabId]);
+    getProfile();
+  }, [changeActiveTabId,getProfile]);
+
 
   return (
     <div className='profile'>
@@ -39,7 +49,7 @@ const Profile = () => {
             <div
               className='img-container-profile'
               style={{
-                backgroundImage: photoUrl ? `url(${photoUrl})` : 'url(https://res.cloudinary.com/dsad92ak9/image/upload/mpmecbcu0xjcp4zdrrfi.jpg)', // Use uploaded photo or default
+                backgroundImage: photoUrl ? `url(${photoUrl})` : 'url(https://res.cloudinary.com/dsad92ak9/image/upload/mpmecbcu0xjcp4zdrrfi.jpg)',
               }}
             >
               <input
@@ -55,21 +65,21 @@ const Profile = () => {
           </button>
           <div className='profile-details-container'>
             <h1 className='profile-details-heading'>Personal Information:</h1>
-            <p><strong>username:</strong>profile name</p>
-            <p><strong>gmail:</strong>profile@gmail.com</p>
-            <p><strong>number:</strong>0123456789</p>
+            <p className='personal-details-info'><strong className='personal-details'>username:</strong> {profileDetails.USERNAME}</p>
+            <p className='personal-details-info'><strong className='personal-details'>gmail:</strong> {profileDetails.GMAIL}</p>
+            <p className='personal-details-info'><strong className='personal-details'>number:</strong> {profileDetails.PHONE}</p>
           </div>
         </div>
         
         <div className="account-details">
         <h2  className='profile-details-heading'>Account Details:</h2>
-        <p><strong>Account Number:</strong> accountNumber</p>
-        <p><strong>Account Type:</strong> accountType</p>
-        <p><strong>Balance:</strong> balance</p>
+        <p className='personal-details-info'><strong className='personal-details'>Id Number:</strong> {profileDetails.ID}</p>
+        <p className='personal-details-info'><strong className='personal-details'>Role:</strong> {profileDetails.ROLE===null?'Customer':profileDetails.ROLE}</p>
+        <p className='personal-details-info'><strong className='personal-details'>Balance:</strong> <Link to="/balance">check balance</Link></p>
       </div>
       <div className='account-details'>
         <h2  className='profile-details-heading'>More Options:</h2>
-        <Link to="/new-password">
+        <Link to="/reset-password">
         <button className='btn btn-primary'>change password</button>
         </Link>
         <Link to='/change-number'>

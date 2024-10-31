@@ -1,0 +1,15 @@
+.styling-button-submit{
+    width:150px;
+}
+.sending-money-admin{
+    background-color: aliceblue;
+    padding: 20px;
+    width: 20vw;
+    border-radius: 15px;
+}
+.main-sending-money-container{
+    width:100vw;
+}
+.success-message{
+    color:green;
+}

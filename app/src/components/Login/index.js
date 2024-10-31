@@ -4,16 +4,21 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css'; 
 import {useState} from 'react'
 import Reset from '../Reset';
-import {Link, useNavigate} from 'react-router-dom'
+import {Link, useNavigate,Navigate} from 'react-router-dom'
 import Cookies from 'js-cookie';
 
 const Login = () => {
+  const navigate=useNavigate();
     const [gmail,setGmail]=useState('');
     const [password,setPassword]=useState('');
     const [showPassword,setShowPassword]=useState(false);
     const [errorStatus,setErrorStatus]=useState(false);
-    
-    const navigate=useNavigate();
+
+    const jwtToken=Cookies.get('jwtToken');
+    if (jwtToken !== undefined) {
+      return <Navigate to="/home" replace />;
+    }
+
     const handlingLogin=async (event)=>{
         event.preventDefault();
         const userDetails={gmail,password}
@@ -26,7 +31,15 @@ const Login = () => {
           const token=await response.json();
           const jwtToken=token.jwtToken;
           Cookies.set('jwtToken',jwtToken,{expires:7});
-          navigate('/home',{replace:true});
+          Cookies.set('id',token.id);
+          Cookies.set('gmail',token.gmail);
+          Cookies.set('role',token.role)
+          if(token.role==='admin'){
+            navigate('/admin',{replace:true})
+          }
+          else{
+            navigate('/home',{replace:true});
+          }
         }
         else{
           setErrorStatus(true);
@@ -35,6 +48,7 @@ const Login = () => {
     const handlingForgotPassword=()=>{
         <Reset/>
     }
+    
   
   return (
   <>
@@ -49,12 +63,12 @@ const Login = () => {
         <div className="col-md-6 credentials-container">
          <form className='form-container' onSubmit={handlingLogin}>
             <div className='input-container'>
-            <label htmlFor="gmail" className='styling-label-login'>ENTER THE GMAIL:</label><br/>
-            <input type="gmail" id="gmail" className='styling-input' onChange={(event)=>{setGmail(event.target.value)}} value={gmail} required/>
+            <label htmlFor="gmail" className='styling-label-login'>ENTER THE EMAIL:</label><br/>
+            <input type="gmail" id="gmail" className='styling-input' onChange={(event)=>{setGmail(event.target.value)}} value={gmail} required placeholder={'Enter your email'}/>
             </div>
             <div className='input-container'>
             <label htmlFor="password" className='styling-label-login'>ENTER THE PASSWORD:</label><br/>
-            <input type={showPassword?password:'password'} id="password" className='styling-input' onChange={(event)=>{setPassword(event.target.value)}} value={password} required/>
+            <input type={showPassword?password:'password'} id="password" className='styling-input' onChange={(event)=>{setPassword(event.target.value)}} value={password} required placeholder={'Enter your password'}/>
             </div>
             <div className='input-container'>
                 <input type="checkbox" id="show-password" onClick={()=>{setShowPassword((prevState)=>!prevState)}}/>

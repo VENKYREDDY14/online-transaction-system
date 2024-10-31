@@ -1,6 +1,7 @@
 .home-container{
     margin-top: 4.3rem;
     display: flex;
+
 }
 .home-main-container{
     margin-left: 2%;
@@ -45,3 +46,160 @@
         margin-left: 14%;
     }
 }
+.img-form{
+    height: 435px;
+    width: 350px;
+    border-radius: 20px;
+}
+.form-image-container{
+    width: 80vw;
+    height: 490px;
+    display: flex;
+    justify-content: center;
+    background-color: #d5f3ee;
+    padding: 20px;
+}
+.transfer-container{
+    margin-top: 4.3rem;
+    display: flex;
+    width: 100%;
+}
+.transfer-main-container{
+    margin-left: 2%;
+    width: 84vw;
+    background-color: #f0f4f8;
+    padding: 40px;
+}
+
+.transfer{
+    width:100vw;
+   
+}
+.send-button-transfer{
+    width:15rem;
+    margin-right: 20px;
+}
+.styling-label-transfer{
+    font-family: "Roboto";
+    font-size: 1.3rem;
+    color: #4f46e5;
+    margin-bottom:2px;
+    
+}
+.main-heading-transfer{
+    font-family: "Roboto";
+    color:  blue;
+}
+.money-container-transfer{
+    border-style: solid;
+    padding: 30px;
+    border-radius: 10px;
+    background-color: #EDE7F6;
+    border-width: 2px;
+    margin-left: 30px;
+
+}
+.money-container-form{
+    width:25vw;
+}
+.styling-input-transfer{
+   cursor: pointer;
+    outline: none;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #dfe2e8;
+    padding: 5px;
+    width: 15rem;
+}
+.scrolling-text-transfer{
+    color:#8a2be2;
+}
+.alert-text{
+    color: red;
+}
+.styling-note-text{
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+.transaction-main-heading{
+    font-family: "Roboto";
+    color:#4f46e5;
+    font-size: 35px;
+    
+}
+@media screen and (min-width:576px){
+    .transfer-container{
+        margin-top: 4.5rem;
+        display: flex;
+    }
+    .transfer-main-container{
+        margin-left: 16%;
+    }
+    .money-container-tranfer{
+        width: 60%;
+    }
+}
+@media screen and (min-width:768px){
+    .transfer-container{
+        margin-top: 75px;
+        display: flex;
+    }
+    .transfer-main-container{
+        margin-left: 18%;
+    }
+    .money-container-tranfer{
+        width: 50%;
+    }
+}
+@media screen and (min-width:992px){
+    .transfer-container{
+        margin-top: 75px;
+        display: flex;
+    }
+    .transfer-main-container{
+        margin-left: 15%;
+    }
+    .money-container-tranfer{
+        width: 25%;
+    }
+}
+@media screen and (min-width:1200px){
+    .transfer-container{
+        margin-top: 90px;
+        display: flex;
+    }
+    .transfer-main-container{
+        margin-left: 14%;
+    }
+}
+.container {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  h2 {
+    color: #333;
+  }
+  
+  .form-control {
+    border: 1px solid #ced4da;
+  }
+  
+  .form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #004085;
+  }
+  

@@ -14,9 +14,17 @@
 }
 .profile-main-container{
     margin-left: 2%;
-    
+    background-color: #f0f4f8;
+    width: 100%;
+    padding: 20px;
 }
-
+.personal-details{
+    color:#2f4f4f;
+}
+.personal-details-info{
+    color:#003c5f;
+    font-weight: 500;
+}
 .profile{
     width:100vw;
 }
@@ -48,6 +56,7 @@
     font-family: "Roboto";
     font-size:1.5rem;
     font-weight: bold;
+    color:#1b5e5e;
 }
 .account-details{
     margin-top: 20px;

@@ -39,6 +39,7 @@
         height:85vh;
         position: fixed;
         left:0;
+        margin: 5px;
     }
     .active-tab-color{
         background-color:#3e5c8a;
