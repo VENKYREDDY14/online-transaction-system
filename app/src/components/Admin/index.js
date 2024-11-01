@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import Cookies from 'js-cookie';
+import Header from '../Header';
+import HeaderDup from '../HeaderDup';
 import './index.css';
 
 const Admin = () => {
@@ -49,8 +51,13 @@ const Admin = () => {
 
     return (
         <div className='main-sending-money-container'>
-            <h1>Add Money to Customers</h1>
-            <form onSubmit={onAddMoney} className='sending-money-admin'>
+            <Header/>
+            <HeaderDup/>
+            
+            <form onSubmit={onAddMoney} className='sending-money-container-form d-flex flex-column justify-content-center align-items-center'>
+            <h1 className='admin-heading'>Add Money to Customers</h1>
+                <div className='sending-money-admin'>
+                    
                 <div>
                     <label htmlFor="gmail" className='styling-label'>Enter Customer Gmail</label><br/>
                     <input type="email" required className='styling-input' id="gmail" onChange={(event) => setGmail(event.target.value)} value={rgmail} />
@@ -72,6 +79,7 @@ const Admin = () => {
                 </div>
                 {errorMessage && <p className='text-center error-message'>{errorMessage}</p>}
                 {successMessage && <p className='text-center success-message'>{successMessage}</p>}
+            </div>
             </form>
         </div>
     );

@@ -12,6 +12,8 @@ import Balance from './components/Balance';
 import ChangeNumber from './components/ChangeNumber';
 import Admin from './components/Admin';
 import { useState } from 'react';
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 const App = () => {
   const [activeTabId, setActiveTabId] = useState('HOME');
@@ -23,15 +25,13 @@ const App = () => {
   return (
     <Context.Provider value={{ activeTabId, changeActiveTabId }}>
       <BrowserRouter>
+      <ToastContainer/>
         <Routes>
-          {/* Public routes */}
           <Route path="/login" element={<Login />} />
           <Route path="/reset-password" element={<Reset />} />
           <Route path="/create-account" element={<CreateAccount />} />
           <Route path="/change-number" element={<ChangeNumber />} />
           <Route path="/" element={<LandingPage />} />
-
-          {/* Protected routes */}
           <Route element={<ProtectedRoute />}>
             <Route path="/home" element={<Home />} />
             <Route path="/profile" element={<Profile />} />

@@ -10,6 +10,7 @@ import tr2 from './tr2.webp'
 import tr4 from './tr4.webp'
 
 const Home = () => {
+  const user=Cookies.get('user');
     const [recipientMail, setRecipientMail] = useState('');
     const [amount, setAmount] = useState('');
     const [note, setNote] = useState('');
@@ -60,7 +61,6 @@ const Home = () => {
         } catch (error) {
             setErrorMessage("Something went wrong. Please try again.");
             setSuccessMessage(null);
-            console.error(error);
         }
     };
 
@@ -75,7 +75,7 @@ const Home = () => {
                         "Initiate a quick and secure money transfer by filling out the recipient information, transfer amount, and any additional notes. Our easy-to-use form ensures your transactions are smooth and hassle-free."
                     </marquee>
 
-                    <h1 className="main-heading-transfer text-center">Transfer Money</h1>
+                    <h1 className="main-heading-transfer text-center">Welcome {user}</h1>
                     <div className="carousel-container">
         <div id="carouselExampleIndicators" className="carousel slide fixed" data-bs-ride="carousel">
           <div className="carousel-indicators">

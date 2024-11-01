@@ -169,7 +169,7 @@ app.post("/login", async (request, response) => {
           GMAIL: gmail,
         };
         const jwtToken = jwt.sign(payload, '1');
-        response.status(200).send({ jwtToken,role:dbUser.ROLE,id:dbUser.ID,gmail:dbUser.GMAIL});
+        response.status(200).send({ jwtToken,role:dbUser.ROLE,id:dbUser.ID,gmail:dbUser.GMAIL,user:dbUser.USERNAME});
       } else {
         response.status(400).send("Invalid Password");
       }

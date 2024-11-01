@@ -2,7 +2,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
-import { BiHide, BiShow } from "react-icons/bi";
+
+import { toast } from 'react-toastify';
 
 const Reset = () => {
     const [gmail, setGmail] = useState('');
@@ -11,7 +12,7 @@ const Reset = () => {
     const [passwordButton, setPasswordButton] = useState(false);
     const [errorMessage, setErrorMessage] = useState('');
     const [password, setPassword] = useState('');
-    const [showPassword, setShowPassword] = useState(false);
+    
 
     const navigate=useNavigate();
 
@@ -39,8 +40,10 @@ const Reset = () => {
                 if (response.ok) {
                     setOtpStatus(true);
                     setErrorMessage('');
+                    toast.success('OTP sent')
                 } else {
-                    setErrorMessage('Failed to send OTP. Please try again.');
+                   
+                    toast.error('Failed to send OTP. Please try again.')
                 }
             } 
         
@@ -60,6 +63,7 @@ const Reset = () => {
                     setErrorMessage('');
                 } else {
                     setErrorMessage('Invalid OTP. Please try again.');
+                    toast.error('Invalid OTP. Please try again.')
                 }
             } 
         
@@ -75,7 +79,7 @@ const Reset = () => {
             })
             if(response.ok){
                 navigate('/login',{replace:true});
-                alert('Password changed successfully');
+                toast.success('Password changed successfully');
             }
         }
         
@@ -111,20 +115,18 @@ const Reset = () => {
             )}
             {errorMessage && <p className='error-message'>{errorMessage}</p>}
             {passwordButton&&(
-                 <div className='input-container pass'>
+                 <div className='input-container'>
                  <label htmlFor="password" className='styling-label'>SET PASSWORD:</label><br />
                  <div className='d-flex'>
                      <input
-                         type={showPassword ? 'text' : 'password'}
+                         type='password'
                          id="password"
                          className='styling-input'
                          onChange={(event) => setPassword(event.target.value)}
                          value={password}
                          required 
                      />
-                     {showPassword
-                         ? <BiShow className='styling-icon' onClick={() => setShowPassword(!showPassword)} />
-                         : <BiHide className='styling-icon' onClick={() => setShowPassword(!showPassword)} />}
+                     
                  </div>
              </div>
             )}

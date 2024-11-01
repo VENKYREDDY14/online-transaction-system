@@ -6,6 +6,7 @@ import {useState} from 'react'
 import Reset from '../Reset';
 import {Link, useNavigate,Navigate} from 'react-router-dom'
 import Cookies from 'js-cookie';
+import { toast } from 'react-toastify';
 
 const Login = () => {
   const navigate=useNavigate();
@@ -15,8 +16,12 @@ const Login = () => {
     const [errorStatus,setErrorStatus]=useState(false);
 
     const jwtToken=Cookies.get('jwtToken');
-    if (jwtToken !== undefined) {
+    const role=Cookies.get('role');
+    if (jwtToken !== undefined && role===undefined) {
       return <Navigate to="/home" replace />;
+    }
+    if(jwtToken !== undefined && role!==undefined){
+      return <Navigate to="/admin" replace />;
     }
 
     const handlingLogin=async (event)=>{
@@ -34,12 +39,14 @@ const Login = () => {
           Cookies.set('id',token.id);
           Cookies.set('gmail',token.gmail);
           Cookies.set('role',token.role)
+          Cookies.set('user',token.user);
           if(token.role==='admin'){
             navigate('/admin',{replace:true})
           }
           else{
             navigate('/home',{replace:true});
           }
+          toast.success('Login Successful');
         }
         else{
           setErrorStatus(true);

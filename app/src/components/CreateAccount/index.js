@@ -2,6 +2,7 @@ import createAccountImage from './create-account.webp';
 import { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useNavigate } from 'react-router-dom';
+import {toast} from 'react-toastify'
 import './index.css';
 
 
@@ -36,7 +37,7 @@ const CreateAccount = () => {
             setOtpValidStatus(false);
             clearTimeout(otpTimeout);
             navigate('/login', { replace: true });
-            alert('Account created successfully');
+            toast.success('Account created successfully');
         } else {
             setOtpValidStatus(true);
         }
@@ -54,13 +55,15 @@ const CreateAccount = () => {
 
         if (response.ok) {
             setOtpStatus(true);
-            alert('Generating OTP');
+            alert('Sending OTP')
+            toast.success('Sent OTP')
             setErrorStatus(false);
 
-            const timeout = setTimeout(removeDetails, 5 * 60 * 1000);
+            const timeout = setTimeout(removeDetails, 1 * 60 * 1000);
             setOtpTimeout(timeout);
         } else {
             setErrorStatus(true);
+            toast.success('OTP not sent')
         }
     };
 
