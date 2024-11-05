@@ -338,11 +338,10 @@ app.post('/transfer', async (req, res) => {
         res.status(500).json({ error: "Internal Server Error" });
     }
 });
-
 app.get('/history/debit/:userMail',async(req,res)=>{
     const {userMail}=req.params;
     try{
-        const sqlQuery=`SELECT * FROM transfer WHERE SENDER_MAIL= ?`;
+        const sqlQuery=`SELECT * FROM transfer WHERE SENDER_MAIL= ? ORDER BY DATE DESC`;
         const response=await db.all(sqlQuery,[userMail]);
         res.send(response);
     }catch(e){
@@ -352,10 +351,22 @@ app.get('/history/debit/:userMail',async(req,res)=>{
 app.get('/history/credit/:userMail',async(req,res)=>{
     const {userMail}=req.params;
     try{
-        const sqlQuery=`SELECT * FROM transfer WHERE R_MAIL= ?`;
+        const sqlQuery=`SELECT * FROM transfer WHERE R_MAIL= ? ORDER BY DATE DESC`;
         const response=await db.all(sqlQuery,[userMail]);
         res.send(response);
     }catch(e){
         res.status(500).json({ error: "Internal Server Error" });
     }
 })
+app.post('/contactus', async (req, res) => {
+    const { contactUsName, contactUsMail, contactUsMessage } = req.body;
+    const sqlQuery = `INSERT INTO contactus (NAME, EMAIL, MESSAGE) VALUES (?, ?, ?)`;
+
+    try {
+        await db.run(sqlQuery, [contactUsName, contactUsMail, contactUsMessage]);
+            res.status(200).json({ message: "Transfer successful" });
+    } catch (error) {
+      
+        res.status(500).json({ error: 'Unexpected server error.' });
+    }
+});

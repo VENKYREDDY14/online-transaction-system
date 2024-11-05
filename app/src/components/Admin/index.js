@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Cookies from 'js-cookie';
 import Header from '../Header';
 import HeaderDup from '../HeaderDup';
+import { toast } from 'react-toastify';
 import './index.css';
 
 const Admin = () => {
@@ -39,9 +40,11 @@ const Admin = () => {
                 setAmount('');
                 setNote('');
                 setPassword('');
+                toast.success('Transfer successfull');
             } else {
                 setErrorMessage(resultMessage);
                 setSuccessMessage('');
+                toast.error('Transfer Failed');
             }
         } catch (error) {
             console.error("Request failed", error);

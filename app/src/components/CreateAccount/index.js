@@ -52,10 +52,9 @@ const CreateAccount = () => {
             headers: { 'Content-type': 'application/json' },
             body: JSON.stringify(userDetails),
         });
-
+        alert('Sending OTP')
         if (response.ok) {
             setOtpStatus(true);
-            alert('Sending OTP')
             toast.success('Sent OTP')
             setErrorStatus(false);
 

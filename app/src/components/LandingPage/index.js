@@ -4,13 +4,13 @@ import './index.css';
 import carouselImg from './bgImageHome.webp';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
-
+import HeaderLogo from './HeaderLogo.webp'
 const LandingPage = () => {
   return (
     <div className="landing-container">
       
       <div className='d-flex justify-content-between navbar'>
-        <img src="https://res.cloudinary.com/dsad92ak9/image/upload/mcvotyiepcy6xlgfobuw.jpg" alt="landing-logo" className='styling-landing-page-icon img-fluid'/>
+        <img src={HeaderLogo} alt="landing-logo" className='styling-header-logo img-fluid'/>
         <Link to="/login">
         <button className='btn btn-primary'>Login</button>
         </Link>
@@ -96,3 +96,5 @@ const LandingPage = () => {
 };
 
 export default LandingPage;
+
+//"https://res.cloudinary.com/dsad92ak9/image/upload/mcvotyiepcy6xlgfobuw.jpg"

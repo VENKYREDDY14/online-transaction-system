@@ -32,14 +32,17 @@ const History = () => {
         recentTransactions();  
     }, [changeActiveTabId]);
 
-    const convertedTransactions = transactions.map(transaction => ({
+    const convertedTransactions = transactions
+    .map(transaction => ({
         id: `TXN${String(transaction.TRANSFER_ID).padStart(3, '0')}`,
         date: new Date(parseFloat(transaction.DATE)).toISOString(),
         amount: parseFloat(transaction.AMOUNT),
         type: transaction.SENDER_MAIL === userMail ? 'debit' : 'credit',
         status: transaction.STATUS.toLowerCase(),
         notes: transaction.NOTE,
-    }));
+    }))
+    .sort((a, b) => new Date(b.date) - new Date(a.date)); 
+
 
     return (
         <div className='history'>

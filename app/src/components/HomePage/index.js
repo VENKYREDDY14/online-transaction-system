@@ -8,6 +8,9 @@ import tranferImage from './transactionImage.webp'
 import tr1 from './tr1.webp'
 import tr2 from './tr2.webp'
 import tr4 from './tr4.webp'
+import { toast } from 'react-toastify';
+
+
 
 const Home = () => {
   const user=Cookies.get('user');
@@ -18,11 +21,43 @@ const Home = () => {
     const [successMessage, setSuccessMessage] = useState(null);
     const [errorMessage, setErrorMessage] = useState(null);
     const { changeActiveTabId } = useContext(Context);
+    const [contactUsName,setContactUsName]=useState('');
+    const [contactUsMail,setContactUsMail]=useState('');
+    const [contactUsMessage,setContactUsMessage]=useState('');
 
     useEffect(() => {
         changeActiveTabId('HOME');
     }, [changeActiveTabId]);
 
+    const onSendFeedback = async (event) => {
+      event.preventDefault();
+      
+      const userDetails = {
+          contactUsName,
+          contactUsMail,
+          contactUsMessage,
+      };
+  
+      try {
+          const response = await fetch('http://localhost:3001/contactus', {
+              method: "POST",
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(userDetails),
+          });
+        
+          if (response.ok) {
+            
+              toast.success( 'Message added successfully');
+          } else {
+              const errorData = await response.json();
+              toast.error('Message adding failed');
+          }
+      } catch (error) {
+          
+          toast.error('An unexpected error occurred. Please try again later.');
+      }
+  };
+  
     const onTransferMoney = async (event) => {
         event.preventDefault();
 
@@ -54,9 +89,11 @@ const Home = () => {
                 setAmount('');
                 setNote('');
                 setPassword('');
+                toast.success('Transfer successful')
             } else {
                 setErrorMessage(result.error);
                 setSuccessMessage(null);
+                toast.error('Transfer failed')
             }
         } catch (error) {
             setErrorMessage("Something went wrong. Please try again.");
@@ -180,18 +217,18 @@ const Home = () => {
       <h2 className="text-center mb-4">Contact Us</h2>
       <div className="row">
         <div className="col-md-6">
-          <form>
+          <form onSubmit={onSendFeedback}>
             <div className="form-group">
               <label htmlFor="name">Name</label>
-              <input type="text" className="form-control" id="name" placeholder="Enter your name" required />
+              <input type="text" className="form-control" id="name" placeholder="Enter your name" required onChange={(event)=>{setContactUsName(event.target.value)}}/>
             </div>
             <div className="form-group">
               <label htmlFor="email">Email</label>
-              <input type="email" className="form-control" id="email" placeholder="Enter your email" required />
+              <input type="email" className="form-control" id="email" placeholder="Enter your email" required onChange={(event)=>{setContactUsMail(event.target.value)}}/>
             </div>
             <div className="form-group">
               <label htmlFor="message">Message</label>
-              <textarea className="form-control" id="message" rows="4" placeholder="Enter your message" required></textarea>
+              <textarea className="form-control" id="message" rows="4" placeholder="Enter your message" required onChange={(event)=>{setContactUsMessage(event.target.value)}}></textarea>
             </div>
             <button type="submit" className="btn btn-primary mt-3">Send Message</button>
           </form>
