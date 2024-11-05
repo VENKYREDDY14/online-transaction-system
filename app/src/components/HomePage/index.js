@@ -163,13 +163,13 @@ const Home = () => {
                     <form onSubmit={onTransferMoney} >
                         <div className='money-container-transfer card'>
                             <div className='input-container'>
-                                <label className='styling-label'>ENTER RECIPIENT MAIL:</label><br />
+                                <label className='styling-label'>ENTER RECIPIENT EMAIL:</label><br />
                                 <input
                                     type="email"
                                     value={recipientMail}
                                     onChange={(event) => setRecipientMail(event.target.value)}
                                     className='styling-input p-1'
-                                    placeholder='Enter recipient mail'
+                                    placeholder='Enter recipient email'
                                     required
                                 />
                             </div>

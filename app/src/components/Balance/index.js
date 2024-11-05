@@ -32,7 +32,7 @@ const Balance = () => {
                 setErrorStatus(false);
             } else {
                 setErrorStatus(true);
-                setUserBalance(null); // Clear balance on error
+                setUserBalance(null); 
             }
         } catch (error) {
             console.error("Error fetching balance:", error);
@@ -54,7 +54,7 @@ const Balance = () => {
                         <h1 className='styling-heading-balance'>Balance</h1>
                     </div>
                     <div className='balance-show-container'>
-                        <h1 className='check-balance-heading'>Check Balance</h1>
+                        <h1 className='check-balance-heading'>CHECK BALANCE</h1>
                         <form onSubmit={getBalance}>
                             <div className='input-container-balance'>
                                 <label htmlFor="password" className='styling-label-login'>Enter Your Password:</label><br />
