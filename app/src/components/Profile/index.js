@@ -65,9 +65,9 @@ const Profile = () => {
           </button>
           <div className='profile-details-container'>
             <h1 className='profile-details-heading'>Personal Information:</h1>
-            <p className='personal-details-info'><strong className='personal-details'>username:</strong> {profileDetails.USERNAME}</p>
-            <p className='personal-details-info'><strong className='personal-details'>gmail:</strong> {profileDetails.GMAIL}</p>
-            <p className='personal-details-info'><strong className='personal-details'>number:</strong> {profileDetails.PHONE}</p>
+            <p className='personal-details-info'><strong className='personal-details'>Username:</strong> {profileDetails.USERNAME}</p>
+            <p className='personal-details-info'><strong className='personal-details'>Email:</strong> {profileDetails.GMAIL}</p>
+            <p className='personal-details-info'><strong className='personal-details'>Number:</strong> {profileDetails.PHONE}</p>
           </div>
         </div>
         

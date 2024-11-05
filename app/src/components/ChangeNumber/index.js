@@ -90,7 +90,7 @@ const ChangeNumber = () => {
             <h1 className="set-phone-heading">CHANGE NUMBER</h1>
             <form onSubmit={handleSubmit}>
                 <div className='input-container'>
-                    <label htmlFor="gmail" className='styling-label'>ENTER THE GMAIL:</label><br />
+                    <label htmlFor="gmail" className='styling-label'>ENTER THE EMAIL:</label><br />
                     <input
                         type="email"
                         id="gmail"
