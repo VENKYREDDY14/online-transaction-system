@@ -272,10 +272,10 @@ app.post('/deposit', async (req, res) => {
         const updateBalanceQuery = `UPDATE balance SET BALANCE = ? WHERE USER_ID = ?`;
         await db.run(updateBalanceQuery, [updatedBalance, recipientUser.ID]);
         const currentDate = new Date();
-        const offsetDate = new Date(currentDate.getTime() + (5.5 * 60 * 60 * 1000));
+        
         const status="Completed";
         const transferQuery = `INSERT INTO transfer (DATE,SENDER_MAIL, R_MAIL, AMOUNT,STATUS,NOTE) VALUES (?, ?, ?, ?,?,?)`;
-        await db.run(transferQuery, [offsetDate,senderGmail, rgmail, amount,status,note]);
+        await db.run(transferQuery, [currentDate,senderGmail, rgmail, amount,status,note]);
         
         res.status(200).send("Transfer successful");
     } catch (error) {

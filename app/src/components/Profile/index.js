@@ -27,7 +27,7 @@ const Profile = () => {
     const response=await fetch(`http://localhost:3001/profile/${id}`);
     if(response.ok){
       const details=await response.json();
-      console.log(details);
+     
       setProfileDetails(details);
     }
   },[])
@@ -59,7 +59,7 @@ const Profile = () => {
                 id="file-upload"
               />
               <label htmlFor="file-upload" className='custom-file-upload'>
-                <span><IoCloudUploadOutline className='icon-profile'/></span>
+               
               </label>
             </div>
           </button>
