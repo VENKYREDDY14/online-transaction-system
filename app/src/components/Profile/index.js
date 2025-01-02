@@ -24,7 +24,7 @@ const Profile = () => {
   };
   const getProfile=useCallback(async()=>{
     const id=Cookies.get('id');
-    const response=await fetch(`http://localhost:3001/profile/${id}`);
+    const response=await fetch(`https://online-transaction-system.onrender.com/profile/${id}`);
     if(response.ok){
       const details=await response.json();
      

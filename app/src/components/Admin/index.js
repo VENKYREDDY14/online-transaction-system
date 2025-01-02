@@ -25,7 +25,7 @@ const Admin = () => {
         }
 
         try {
-            const response = await fetch('http://localhost:3001/deposit', {
+            const response = await fetch('https://online-transaction-system.onrender.com/deposit', {
                 method: "POST",
                 headers: { 'Content-type': 'application/json' },
                 body: JSON.stringify(recipientData)

@@ -33,7 +33,7 @@ const ChangeNumber = () => {
         setGmailStatus('')
         if (gmail) {
             const userDetails = { gmail };
-            const response = await fetch('http://localhost:3001/resetotp', {
+            const response = await fetch('https://online-transaction-system.onrender.com/resetotp', {
                 method: 'PUT',
                 headers: { 'Content-type': 'application/json' },
                 body: JSON.stringify(userDetails),
@@ -51,7 +51,7 @@ const ChangeNumber = () => {
     const handleOtpSubmit = async () => {
         if (otp) {
             const userDetails = { otp, gmail };
-            const response = await fetch('http://localhost:3001/verify-reset-otp', {
+            const response = await fetch('https://online-transaction-system.onrender.com/verify-reset-otp', {
                 method: 'POST',
                 headers: { 'Content-type': 'application/json' },
                 body: JSON.stringify(userDetails),
@@ -70,7 +70,7 @@ const ChangeNumber = () => {
     const handleNumber = async () => {
         if (number) {
             const userDetails = { number, gmail };
-            const response = await fetch('http://localhost:3001/reset-number', {
+            const response = await fetch('https://online-transaction-system.onrender.com/reset-number', {
                 method: 'PUT',
                 headers: { 'Content-type': 'application/json' },
                 body: JSON.stringify(userDetails),

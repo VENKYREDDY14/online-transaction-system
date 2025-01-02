@@ -13,10 +13,10 @@ const History = () => {
 
     const recentTransactions = async () => {
         try {
-            const debitResponse = await fetch(`http://localhost:3001/history/debit/${userMail}`);
+            const debitResponse = await fetch(`https://online-transaction-system.onrender.com/history/debit/${userMail}`);
             const debitData = await debitResponse.json();
 
-            const creditResponse = await fetch(`http://localhost:3001/history/credit/${userMail}`);
+            const creditResponse = await fetch(`https://online-transaction-system.onrender.com/history/credit/${userMail}`);
             const creditData = await creditResponse.json();
 
             const combinedTransactions = [...debitData, ...creditData];

@@ -20,7 +20,7 @@ const Balance = () => {
         const userDetails = { id: userId, password };
         
         try {
-            const response = await fetch(`http://localhost:3001/balance`, {
+            const response = await fetch(`https://online-transaction-system.onrender.com/balance`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(userDetails),

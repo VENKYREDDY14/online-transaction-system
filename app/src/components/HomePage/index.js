@@ -39,7 +39,7 @@ const Home = () => {
       };
   
       try {
-          const response = await fetch('http://localhost:3001/contactus', {
+          const response = await fetch('https://online-transaction-system.onrender.com/contactus', {
               method: "POST",
               headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify(userDetails),
@@ -75,7 +75,7 @@ const Home = () => {
         const moneyDetails = { senderMail, recipientMail, amount, note, password };
 
         try {
-            const response = await fetch('http://localhost:3001/transfer', {
+            const response = await fetch('https://online-transaction-system.onrender.com/transfer', {
                 method: "POST",
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(moneyDetails)

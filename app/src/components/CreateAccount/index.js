@@ -21,13 +21,13 @@ const CreateAccount = () => {
     const navigate = useNavigate();
 
     const removeDetails = async () => {
-        await fetch(`http://localhost:3001/users/${gmail}`, { method: 'DELETE' });
+        await fetch(`https://online-transaction-system.onrender.com/users/${gmail}`, { method: 'DELETE' });
     };
 
     const onVerifyingOtp = async (event) => {
         event.preventDefault()
         const OTP = { otp, gmail };
-        const url = 'http://localhost:3001/validate/';
+        const url = 'https://online-transaction-system.onrender.com/validate/';
         const response = await fetch(url, {
             method: 'POST',
             headers: { 'Content-type': 'application/json' },
@@ -47,7 +47,7 @@ const CreateAccount = () => {
         event.preventDefault(); 
 
         const userDetails = { number, gmail, username, password };
-        const response = await fetch('http://localhost:3001/users/', {
+        const response = await fetch('https://online-transaction-system.onrender.com/users/', {
             method: 'POST',
             headers: { 'Content-type': 'application/json' },
             body: JSON.stringify(userDetails),

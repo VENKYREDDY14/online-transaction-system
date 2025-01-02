@@ -32,7 +32,7 @@ const Reset = () => {
         if (gmail) {
             const userDetails = { gmail };
             
-                const response = await fetch('http://localhost:3001/resetotp', {
+                const response = await fetch('https://online-transaction-system.onrender.com/resetotp', {
                     method: "PUT",
                     headers: { 'Content-type': 'application/json' },
                     body: JSON.stringify(userDetails)
@@ -53,7 +53,7 @@ const Reset = () => {
         if (otp) {
             const userDetails = { otp, gmail };
            
-                const response = await fetch('http://localhost:3001/verify-reset-otp', {
+                const response = await fetch('https://online-transaction-system.onrender.com/verify-reset-otp', {
                     method: "POST",
                     headers: { 'Content-type': 'application/json' },
                     body: JSON.stringify(userDetails)
@@ -72,7 +72,7 @@ const Reset = () => {
     const handlePassword = async () => {
         if(password){
             const userDetails={password,gmail}
-            const response=await fetch('http://localhost:3001/reset-password',{
+            const response=await fetch('https://online-transaction-system.onrender.com/reset-password',{
                 method:"PUT",
                 headers:{'Content-type':'application/json'},
                 body:JSON.stringify(userDetails)
